@@ -120,17 +120,29 @@ func (p *freeboxProvider) Configure(ctx context.Context, req provider.ConfigureR
 
 func (p *freeboxProvider) Resources(ctx context.Context) []func() resource.Resource {
 	return []func() resource.Resource{
+		NewDhcpLeaseResource,
 		NewRemoteFileResource,
 		NewVirtualDiskResource,
 		NewVirtualMachineResource,
 		NewPortForwardingResource,
+		NewVPNServerResource,
+		NewVPNUserResource,
+		NewLanConfigResource,
 	}
 }
 
 func (p *freeboxProvider) DataSources(ctx context.Context) []func() datasource.DataSource {
 	return []func() datasource.DataSource{
 		NewAPIVersionDataSource,
+		NewDhcpLeaseDataSource,
+		NewDhcpLeasesDataSource,
+		NewLanConfigDataSource,
+		NewLanInterfaceHostDataSource,
+		NewLanInterfaceHostsDataSource,
 		NewVirtualDiskDataSource,
+		NewVMDistributionsDataSource,
+		NewLanInterfacesDataSource,
+		NewSystemInfoDataSource,
 	}
 }
 

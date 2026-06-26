@@ -28,8 +28,10 @@ output "filesystem_task_id" {
 - `authentication` (Attributes) Authentication credentials to use for the operation (see [below for nested schema](#nestedatt--authentication))
 - `checksum` (String) Checksum to verify the hash of the downloaded file
 - `extract` (Attributes) Whether to extract the file after downloading (see [below for nested schema](#nestedatt--extract))
+- `parents` (Boolean) Whether to create parent directories
 - `polling` (Attributes) Polling configuration (see [below for nested schema](#nestedatt--polling))
 - `source_content` (String) The content of the file
+- `source_local_file` (String) The path to the file to upload
 - `source_remote_file` (String) The path to the file on the Freebox to copy
 - `source_url` (String) The URL of the file to download
 
