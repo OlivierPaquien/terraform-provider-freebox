@@ -56,7 +56,7 @@ func (r *virtualMachinePowerResource) Metadata(_ context.Context, req resource.M
 
 func (r *virtualMachinePowerResource) Schema(_ context.Context, _ resource.SchemaRequest, resp *resource.SchemaResponse) {
 	resp.Schema = schema.Schema{
-		MarkdownDescription: "Manages the power state of a Freebox virtual machine independently from its configuration. Use this resource together with `auto_start = false` on `freebox_virtual_machine` to start a VM only after other resources (such as `freebox_dhcp_static_lease`) have been applied in the same Terraform run.",
+		MarkdownDescription: "Manages the power state of a Freebox virtual machine independently from its configuration. Use this resource on `freebox_virtual_machine` to start a VM only after other resources (such as `freebox_dhcp_static_lease`) have been applied in the same Terraform run.",
 		Attributes: map[string]schema.Attribute{
 			"id": schema.StringAttribute{
 				Computed:            true,
